@@ -11,6 +11,7 @@ st.set_page_config(
 st.title('Phát hiện khuôn mặt')
 
 FRAME_WINDOW = st.image([])
+camera_st = st.camera_input(label="CAMERA")
 deviceId = 0
 cap = cv.VideoCapture(deviceId)
 
