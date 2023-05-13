@@ -84,4 +84,8 @@ while True:
 
     # Visualize results
     FRAME_WINDOW.image(frame, channels='BGR')
-cv.destroyAllWindows()
+
+try:
+    cv.destroyAllWindows()
+except cv.error:
+    pass
