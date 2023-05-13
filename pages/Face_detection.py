@@ -1,6 +1,6 @@
 import streamlit as st
-import numpy as np
-import cv2 as cv
+# import numpy as np
+# import cv2 as cv
 
 st.set_page_config(
     page_title="Phát hiện khuôn mặt",
