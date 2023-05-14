@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import gdown
+import os
 
 st.set_page_config(
     page_title="Dự đoán giá nhà ở California",
@@ -17,8 +18,9 @@ def my_format(x):
     return s
 
 url = 'https://drive.google.com/uc?id=1_8_ZBrXtkv08oXteYW4z3X-Q_cvDplxr'
-output = 'forest_reg_model.pkl'
-gdown.download(url, output, quiet=False)
+output = './src/Predicting_House_Prices_Cali/forest_reg_model.pkl'
+if not os.path.exists(output):
+    gdown.download(url, output, quiet=False)
 
 with open(output, 'rb') as f:
     forest_reg = joblib.load(f)
