@@ -12,7 +12,7 @@ st.title('Phát hiện khuôn mặt')
 FRAME_WINDOW = st.image([])
 isCamera = False
 
-deviceId = 10
+deviceId = 0
 cap = cv.VideoCapture(deviceId)
 
 if(cap.isOpened()):
