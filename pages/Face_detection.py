@@ -11,8 +11,9 @@ st.set_page_config(
 st.title('Phát hiện khuôn mặt')
 
 FRAME_WINDOW = st.image([])
-deviceId = 0
-cap = cv.VideoCapture(deviceId)
+# deviceId = 0
+# cap = cv.VideoCapture(deviceId)
+camera_st = st.camera_input(label="CAMERA")
 
 
 if 'stop' not in st.session_state:
