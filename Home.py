@@ -26,6 +26,8 @@
 #     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 # """
 # )
-from streamlit_webrtc import webrtc_streamer
+import streamlit as st
 
-webrtc_streamer(key="demo")
+camera_st = st.camera_input(label="CAMERA")
+if camera_st:
+    st.image(camera_st)
