@@ -1,4 +1,5 @@
 opencv-python-headless
+pyvirtualcam
+v4l2loopback
 numpy
 streamlit
-streamlit_webrtc
