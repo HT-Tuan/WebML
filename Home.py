@@ -26,24 +26,6 @@
 #     - Explore a [New York City rideshare dataset](https://github.com/streamlit/demo-uber-nyc-pickups)
 # """
 # )
+from streamlit_webrtc import webrtc_streamer
 
-import streamlit as st
-
-import cv2
-
-def check_webcam():
-    webcam_dict = dict()
-    for i in range(0, 10):
-        cap = cv2.VideoCapture(i)
-        is_camera = cap.isOpened()
-        if is_camera:
-            webcam_dict[f"index[{i}]"] = "VALID"
-            cap.release()
-        else:
-            webcam_dict[f"index[{i}]"] = None
-    return webcam_dict
-
-if __name__ == "__main__":
-    st.title('WebCam index validation check')
-    webcam_dict = check_webcam()
-    st.write(webcam_dict)
+webrtc_streamer(key="demo")
