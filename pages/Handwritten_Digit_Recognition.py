@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import ImageTk, Image
 import tensorflow as tf
 import numpy as np
 from tensorflow import keras
@@ -60,7 +59,7 @@ with left_column:
             digit_random[m*28:(m+1)*28, n*28:(n+1)*28] = X_test_image[st.session_state.index[i]] 
         cv2.imwrite('./images/digit_random.jpg', digit_random)
 
-        st.session_state.image = Image.open('./images/digit_random.jpg')
+        st.session_state.image = cv2.imread('./images/digit_random.jpg')
         image_element.image(st.session_state.image, channels='RGB')
 
 with right_column:
