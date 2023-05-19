@@ -57,8 +57,8 @@ def visualize(input, faces, fps, thickness=2):
             cv.circle(input, (coords[10], coords[11]), 2, (255, 0, 255), thickness)
             cv.circle(input, (coords[12], coords[13]), 2, (0, 255, 255), thickness)
             dem = dem + 1
-    cv.putText(input, 'FPS: {:.2f}'.format(fps), (1, 16), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
-    cv.putText(input, 'Total: {:d}'.format(dem), (1, 50), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
+    cv.putText(input, 'FPS: {:.2f}'.format(fps), (1, 16), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
+    cv.putText(input, 'Total: {:d}'.format(dem), (1, 50), cv.FONT_HERSHEY_SIMPLEX, 0.5, (0, 0, 255), 2)
 
 detector = cv.FaceDetectorYN.create(
     './src/Face_detection/face_detection_yunet_2022mar.onnx',
@@ -116,8 +116,3 @@ else:
 
         # Visualize results
         FRAME_WINDOW.image(frame, channels='BGR')
-
-try:
-    cv.destroyAllWindows()
-except cv.error:
-    pass
